@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Dog Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Working Dog Registration</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#registration">Register a Dog</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome!</h2>
+            <p>This website allows you to register your working dogs: Pitbull Terriers, American Bullies, and Bandogs.</p>
+        </section>
+
+        <section id="registration">
+            <h2>Register Your Dog</h2>
+            <form id="registrationForm">
+                <label for="dogName">Dog's Name:</label>
+                <input type="text" id="dogName" name="dogName" required>
+                
+                <label for="breed">Breed:</label>
+                <select id="breed" name="breed" required>
+                    <option value="Pitbull Terrier">Pitbull Terrier</option>
+                    <option value="American Bully">American Bully</option>
+                    <option value="Bandog">Bandog</option>
+                </select>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="ownerName">Owner's Name:</label>
+                <input type="text" id="ownerName" name="ownerName" required>
+
+                <label for="contact">Contact Information:</label>
+                <input type="email" id="contact" name="contact" required>
+
+                <label for="dogImage">Upload Dog's Picture:</label>
+                <input type="file" id="dogImage" name="dogImage" accept=".jpg,.jpeg,.png" required>
+
+                <h3>Lineage (Up to 6 Generations)</h3>
+                <div id="lineageContainer">
+                    <div class="lineage">
+                        <label for="ancestor1">Ancestor 1:</label>
+                        <input type="text" id="ancestor1" name="ancestor1" placeholder="Name, Breed, Date of Birth">
+                    </div>
+                    <div class="lineage">
+                        <label for="ancestor2">Ancestor 2:</label>
+                        <input type="text" id="ancestor2" name="ancestor2" placeholder="Name, Breed, Date of Birth">
+                    </div>
+                    <div class="lineage">
+                        <label for="ancestor3">Ancestor 3:</label>
+                        <input type="text" id="ancestor3" name="ancestor3" placeholder="Name, Breed, Date of Birth">
+                    </div>
+                    <div class="lineage">
+                        <label for="ancestor4">Ancestor 4:</label>
+                        <input type="text" id="ancestor4" name="ancestor4" placeholder="Name, Breed, Date of Birth">
+                    </div>
+                    <div class="lineage">
+                        <label for="ancestor5">Ancestor 5:</label>
+                        <input type="text" id="ancestor5" name="ancestor5" placeholder="Name, Breed, Date of Birth">
+                    </div>
+                    <div class="lineage">
+                        <label for="ancestor6">Ancestor 6:</label>
+                        <input type="text" id="ancestor6" name="ancestor6" placeholder="Name, Breed, Date of Birth">
+                    </div>
+                </div>
+
+                <label>
+                    <input type="checkbox" required>
+                    I agree to the terms and conditions.
+                </label>
+
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="contactName">Your Name:</label>
+                <input type="text" id="contactName" name="contactName" required>
+
+                <label for="contactEmail">Your Email:</label>
+                <input type="email" id="contactEmail" name="contactEmail" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Working Dog Registration</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html><ALOASK-SEPARATE-EDITORS>body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+form {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.lineage {
+    margin-bottom: 10px;
+}
+
+button {
+    background: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4cae4c;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+}<ALOASK-SEPARATE-EDITORS>document.getElementById('registrationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Example validation for image upload
+    const dogImage = document.getElementById('dogImage').files[0];
+    if (dogImage) {
+        alert('Registration form submitted! Thank you for registering your dog.');
+        // Here you would typically send the form data to your server
+    } else {
+        alert('Please upload a picture of your dog.');
+    }
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for contacting us!');
+    // Here you would typically send the contact form data to your server
+});
